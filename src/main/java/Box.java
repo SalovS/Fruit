@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Box {
-    private List<Fruit> fruits = new ArrayList<>();
+public class Box <T extends Fruit>{
+    private List<T> fruits = new ArrayList<>();
 
-    public void addingFruit(Fruit fruit){
+    public void addingFruit(T fruit){
         if(fruits.isEmpty() || fruits.get(0).getClass().equals(fruit.getClass())){
             fruits.add(fruit);
         }else{
@@ -12,7 +12,7 @@ public class Box {
         }
     }
 
-    public void addingFruit(Box box){
+    public void moVintFruits(Box box){
         if(fruits.isEmpty() || fruits.get(0).getClass().equals(box.getClass())){
             fruits.addAll(box.getFruits());
         }else{
@@ -20,8 +20,8 @@ public class Box {
         }
     }
 
-    public List<Fruit> getFruits(){
-        List<Fruit> answer = new ArrayList<>();
+    public List<? extends Fruit> getFruits(){
+        List<T> answer = new ArrayList<>();
         answer.addAll(fruits);
         fruits.clear();
         return answer;

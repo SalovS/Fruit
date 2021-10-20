@@ -1,4 +1,4 @@
-public class Orange implements Fruit {
+public class Orange extends Fruit {
     private final double WEIGHT = 1.5;
 
     @Override

@@ -56,14 +56,14 @@ class BoxTest {
         box3.addingFruit(new Orange());
         box3.addingFruit(new Orange());
         box3.addingFruit(new Orange());
-        box3.addingFruit(box);
+        box3.moVintFruits(box);
         Assert.assertEquals(6.0, box3.getWight(), 0.0001);
     }
     @Test
     public void getWight1(){
         box.addingFruit(new Apple());
         box.addingFruit(new Apple());
-        box2.addingFruit(box);
+        box2.moVintFruits(box);
         Assert.assertEquals(2, box2.getWight(), 0.0001);
     }
 }
