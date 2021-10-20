@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BoxTest {
-    Box box = new Box();
+    Box<Apple> box = new Box();
     Box box2 = new Box();
-    Box box3 = new Box();
+    Box<Orange> box3 = new Box();
 
     @Test
     public void Compare1(){
@@ -35,10 +35,9 @@ class BoxTest {
     }
     @Test
     public void addingFruit3(){
-        box.addingFruit(new Orange());
         box.addingFruit(new Apple());
         box.addingFruit(new Apple());
-        Assert.assertEquals(1.5, box.getWight(), 0.0001);
+        Assert.assertEquals(2.0, box.getWight(), 0.0001);
     }
     @Test
     public void addingFruit2(){
@@ -56,7 +55,7 @@ class BoxTest {
         box3.addingFruit(new Orange());
         box3.addingFruit(new Orange());
         box3.addingFruit(new Orange());
-        box3.movingFruits(box);
+        //box3.movingFruits(box);
         Assert.assertEquals(6.0, box3.getWight(), 0.0001);
     }
     @Test

@@ -1,23 +1,16 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Box <T extends Fruit>{
     private List<T> fruits = new ArrayList<>();
 
     public void addingFruit(T fruit){
-        if(fruits.isEmpty() || fruits.get(0).getClass().equals(fruit.getClass())){
-            fruits.add(fruit);
-        }else{
-            System.out.println("В одну коробку нельзя клать разные фрукты");
-        }
+        fruits.add(fruit);
     }
 
-    public void movingFruits(Box box){
-        if(fruits.isEmpty() || fruits.get(0).getClass().equals(box.getClass())){
-            fruits.addAll(box.getFruits());
-        }else{
-            System.out.println("В одну коробку нельзя клать разные фрукты");
-        }
+    public void movingFruits(Box<T> box){
+        fruits.addAll((Collection<? extends T>) box.getFruits());
     }
 
     public List<? extends Fruit> getFruits(){

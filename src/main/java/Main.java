@@ -7,8 +7,6 @@ public class Main {
         System.out.println(arrayToArrayList(numberArr));
         numberArr = chengPosition(numberArr, 1, 5);
         System.out.println(arrayToArrayList(numberArr));
-
-
     }
 
     public static Object[] chengPosition(Object[] arr, int pos1, int pos2){
