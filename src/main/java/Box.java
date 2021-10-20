@@ -12,7 +12,7 @@ public class Box <T extends Fruit>{
         }
     }
 
-    public void moVintFruits(Box box){
+    public void movingFruits(Box box){
         if(fruits.isEmpty() || fruits.get(0).getClass().equals(box.getClass())){
             fruits.addAll(box.getFruits());
         }else{
